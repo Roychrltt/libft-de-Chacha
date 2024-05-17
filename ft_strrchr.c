@@ -6,7 +6,7 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:53:24 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/05/17 16:40:44 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/05/17 17:06:01 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			p = (char *)(s + i);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (unsigned char)c)
 		p = (char *)(s + i);
 	return (p);
 }
