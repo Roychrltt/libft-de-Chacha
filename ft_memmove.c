@@ -6,7 +6,7 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:50:23 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/05/17 16:01:48 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/05/17 17:30:40 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = (char *)dst;
 	s = (const char *)src;
-	if (!dst || !src)
-		return (NULL);
-	if (dst == src)
-		return (dst);
 	if (dst > src && dst < (src + len))
 	{
-		while (len-- > 0)
+		while (len--)
 			d[len] = s[len];
 	}
 	else
