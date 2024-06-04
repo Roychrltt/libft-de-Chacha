@@ -1,4 +1,4 @@
-Libft
+Libft validated on 20/05/2024
 
 Tested with Francinette
 
