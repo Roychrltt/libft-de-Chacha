@@ -1,4 +1,6 @@
-Libft validated on 20/05/2024
+# Libft
+
+Validated on 20/05/2024
 
 Tested with Francinette
 
