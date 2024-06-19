@@ -6,7 +6,7 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:54:52 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/05/17 16:01:25 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/06/19 14:30:25 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <stdio.h>
+# include <limits.h>
 
 typedef struct s_list
 {
