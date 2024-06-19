@@ -55,6 +55,7 @@ all: ${NAME}
 
 ${NAME}: ${OBJ} libft.h
 	ar rc ${NAME} ${OBJ}
+	@echo "$(CYAN)$(NAME)$(RESET) $(GREEN)create!$(RESET)"
 
 %.o: %.c libft.h
 	${CC} -I. -c $< -o $@
@@ -63,11 +64,25 @@ bonus: ${OBJ_BONUS} libft.h
 	ar rc ${NAME} ${OBJ_BONUS}
 
 clean:
+	@echo "$(GREEN)Cleaning up...$(RESET)"
 	rm -rf ${OBJ} ${OBJ_BONUS}
+	@echo "$(GREEN)Clean finished!$(RESET)"
+
 
 fclean: clean
+	@echo "$(GREEN)Fcleaning up...$(RESET)"
 	rm -rf ${NAME}
+	@echo "$(GREEN)Fclean finished!$(RESET)"
 
 re: fclean all
 
 .PHONY: all clean fclean re bonus
+
+# COLORS
+RED = \033[31m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+MAGENTA = \033[35m
+CYAN = \033[36m
+RESET = \033[0m
