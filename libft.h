@@ -6,14 +6,16 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:54:52 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/06/19 14:30:25 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/06/24 13:28:32 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <fcntl.h>
 # include <unistd.h>
+# include <stdarg.h>
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdio.h>
@@ -24,6 +26,10 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -68,5 +74,10 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+size_t	gnl_strlen(const char *s);
+size_t	gnl_strchr(const char *s);
+void	gnl_strlcpy(char *dst, const char *src, size_t len);
+char	*gnl_substr(char const *s, size_t start, size_t len);
+char	*get_next_line(int fd);
 
 #endif

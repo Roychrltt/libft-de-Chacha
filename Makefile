@@ -33,41 +33,35 @@ SRC = ft_atoi.c \
 	  ft_strtrim.c \
 	  ft_substr.c \
 	  ft_tolower.c \
-	  ft_toupper.c
-
-SRC_BONUS = ft_lstadd_back_bonus.c \
-			ft_lstadd_front_bonus.c \
-			ft_lstclear_bonus.c \
-			ft_lstdelone_bonus.c \
-			ft_lstiter_bonus.c \
-			ft_lstlast_bonus.c \
-			ft_lstmap_bonus.c \
-			ft_lstnew_bonus.c \
-			ft_lstsize_bonus.c 
+	  ft_toupper.c \
+	  ft_lstadd_back_bonus.c \
+	  ft_lstadd_front_bonus.c \
+	  ft_lstclear_bonus.c \
+	  ft_lstdelone_bonus.c \
+	  ft_lstiter_bonus.c \
+	  ft_lstlast_bonus.c \
+	  ft_lstmap_bonus.c \
+	  ft_lstnew_bonus.c \
+	  ft_lstsize_bonus.c \
+	  get_next_line.c get_next_line_utils.c
 
 OBJ = ${SRC:.c=.o}
 
-OBJ_BONUS = ${SRC_BONUS:.c=.o}
-
-CC = gcc -Wall -Wextra -Werror
+CC = cc -Wall -Wextra -Werror
 
 all: ${NAME}
 
-${NAME}: ${OBJ} libft.h
+$(NAME): ${OBJ} libft.h
 	ar rc ${NAME} ${OBJ}
 	@echo "$(CYAN)$(NAME)$(RESET) $(GREEN)create!$(RESET)"
 
 %.o: %.c libft.h
 	${CC} -I. -c $< -o $@
 
-bonus: ${OBJ_BONUS} libft.h
-	ar rc ${NAME} ${OBJ_BONUS}
-
 clean:
 	@echo "$(GREEN)Cleaning up...$(RESET)"
 	rm -rf ${OBJ} ${OBJ_BONUS}
 	@echo "$(GREEN)Clean finished!$(RESET)"
-
 
 fclean: clean
 	@echo "$(GREEN)Fcleaning up...$(RESET)"
@@ -76,7 +70,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re 
 
 # COLORS
 RED = \033[31m
