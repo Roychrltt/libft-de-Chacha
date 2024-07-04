@@ -6,7 +6,7 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:54:52 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/06/24 13:28:32 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/07/04 15:49:09 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,14 @@ size_t	gnl_strchr(const char *s);
 void	gnl_strlcpy(char *dst, const char *src, size_t len);
 char	*gnl_substr(char const *s, size_t start, size_t len);
 char	*get_next_line(int fd);
+int		ft_printf(const char *str, ...);
+int		get_num_len(uintptr_t num, uintptr_t base);
+void	put_num(uintptr_t num, char format, uintptr_t base);
+int		print_c(int c);
+int		print_di(int nb);
+int		print_p(unsigned long long ptr);
+int		print_s(const char *s);
+int		print_u(unsigned int nb);
+int		print_x(unsigned int nb, char format);
 
 #endif

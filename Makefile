@@ -43,7 +43,8 @@ SRC = ft_atoi.c \
 	  ft_lstmap_bonus.c \
 	  ft_lstnew_bonus.c \
 	  ft_lstsize_bonus.c \
-	  get_next_line.c get_next_line_utils.c
+	  get_next_line.c get_next_line_utils.c \
+	  ft_printf.c print_diu.c print_x.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -52,20 +53,20 @@ CC = cc -Wall -Wextra -Werror
 all: ${NAME}
 
 $(NAME): ${OBJ} libft.h
-	ar rc ${NAME} ${OBJ}
+	@ar rc ${NAME} ${OBJ}
 	@echo "$(CYAN)$(BOLD)$(NAME)$(RESET) $(GREEN)create!$(RESET)"
 
 %.o: %.c libft.h
-	${CC} -I. -c $< -o $@
+	@${CC} -I. -c $< -o $@
 
 clean:
 	@echo "$(GREEN)Cleaning up...$(RESET)"
-	rm -rf ${OBJ} ${OBJ_BONUS}
+	@rm -rf ${OBJ} ${OBJ_BONUS}
 	@echo "$(GREEN)Clean finished!$(RESET)"
 
 fclean: clean
 	@echo "$(GREEN)Fcleaning up...$(RESET)"
-	rm -rf ${NAME}
+	@rm -rf ${NAME}
 	@echo "$(GREEN)Fclean finished!$(RESET)"
 
 re: fclean all
