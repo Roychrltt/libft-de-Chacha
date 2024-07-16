@@ -54,25 +54,27 @@ CC = cc -Wall -Wextra -Werror
 all: ${NAME}
 
 $(NAME): ${OBJ} libft.h
-	@ar rc ${NAME} ${OBJ}
-	@echo "$(CYAN)$(BOLD)$(NAME)$(RESET) $(GREEN)create!$(RESET)"
+	ar rc ${NAME} ${OBJ}
+	printf "$(ERASE)$(CYAN)$(BOLD)$@$(RESET) $(GREEN)created!\n$(RESET)"
 
 %.o: %.c libft.h
-	@${CC} -I. -c $< -o $@
+	${CC} -I. -c $< -o $@
+	printf "$(ERASE)$(BLUE) > Compilation: $(RESET) $<"
 
 clean:
-	@echo "$(GREEN)Cleaning up...$(RESET)"
-	@rm -rf ${OBJ} ${OBJ_BONUS}
-	@echo "$(GREEN)Clean finished!$(RESET)"
+	printf "$(ERASE)$(GREEN)Cleaning up...$(RESET)"
+	rm -rf ${OBJ} ${OBJ_BONUS}
+	printf "$(ERASE)$(GREEN)Clean finished!\n$(RESET)"
 
 fclean: clean
-	@echo "$(GREEN)Fcleaning up...$(RESET)"
-	@rm -rf ${NAME}
-	@echo "$(GREEN)Fclean finished!$(RESET)"
+	printf "$(GREEN)Fcleaning up...$(RESET)"
+	rm -rf ${NAME}
+	printf "$(ERASE)$(GREEN)Fclean finished!\n$(RESET)"
 
 re: fclean all
 
 .PHONY: all clean fclean re 
+.SILENT:
 
 # COLORS
 RED = \033[31m
@@ -82,4 +84,5 @@ BLUE = \033[34m
 MAGENTA = \033[35m
 CYAN = \033[36m
 BOLD = \033[1m
+ERASE = \033[2K\r
 RESET = \033[0m
