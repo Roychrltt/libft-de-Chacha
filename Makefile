@@ -1,6 +1,7 @@
 NAME = libft.a
 
-SRC = ft_atoi.c \
+SRC = count_word.c \
+	  ft_atoi.c \
 	  ft_atoi_base.c \
 	  ft_bzero.c \
 	  ft_calloc.c \
@@ -56,16 +57,14 @@ all: ${NAME}
 
 $(NAME): ${OBJ} libft.h
 	ar rc ${NAME} ${OBJ}
-	printf "$(ERASE)$(CYAN)$(BOLD)$@$(RESET) $(GREEN)created!\n$(RESET)"
+	printf "$(ERASE)👷 $(CYAN)$(BOLD)$@$(RESET) $(GREEN)created! 👷\n$(RESET)"
 
 %.o: %.c libft.h
 	${CC} -I. -c $< -o $@
 	printf "$(ERASE)$(BLUE) > Compilation: $(RESET) $<"
 
 clean:
-	printf "$(ERASE)$(GREEN)Cleaning up...$(RESET)"
 	rm -rf ${OBJ} ${OBJ_BONUS}
-	printf "$(ERASE)$(GREEN)Clean finished!\n$(RESET)"
 
 fclean: clean
 	printf "$(GREEN)Fcleaning up...$(RESET)"

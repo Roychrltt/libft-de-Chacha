@@ -6,7 +6,7 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:54:52 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/08/18 15:27:02 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/10/21 14:17:52 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdint.h>
 # include <stdio.h>
 # include <limits.h>
+# include "ft_printf.h"
 
 typedef struct s_list
 {
@@ -31,6 +32,7 @@ typedef struct s_list
 #  define BUFFER_SIZE 42
 # endif
 
+int		count_word(char const *s, char c);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
@@ -59,7 +61,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
-char	*ft_strchr(const char *s, int c);
+size_t	ft_strchr(const char *s, char c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
@@ -81,13 +83,5 @@ void	gnl_strlcpy(char *dst, const char *src, size_t len);
 char	*gnl_substr(char const *s, size_t start, size_t len);
 char	*get_next_line(int fd);
 int		ft_printf(const char *str, ...);
-int		get_num_len(uintptr_t num, uintptr_t base);
-void	put_num(uintptr_t num, char format, uintptr_t base);
-int		print_c(int c);
-int		print_di(int nb);
-int		print_p(unsigned long long ptr);
-int		print_s(const char *s);
-int		print_u(unsigned int nb);
-int		print_x(unsigned int nb, char format);
 
 #endif

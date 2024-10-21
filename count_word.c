@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   count_word.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 15:51:23 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/08/20 14:23:45 by xiaxu            ###   ########.fr       */
+/*   Created: 2024/08/20 17:19:46 by xiaxu             #+#    #+#             */
+/*   Updated: 2024/08/20 17:20:09 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strchr(const char *s, char c)
+int	count_word(char const *s, char c)
 {
 	size_t	i;
+	int		count;
 
 	i = 0;
+	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-			return (i);
+		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
+			count++;
 		i++;
 	}
-	return (i);
+	return (count);
 }

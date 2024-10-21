@@ -6,11 +6,11 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:24:29 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/07/04 15:49:21 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/07/03 08:54:29 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	print_c(int c)
 {

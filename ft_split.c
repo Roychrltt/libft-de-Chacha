@@ -6,27 +6,11 @@
 /*   By: xiaxu <xiaxu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:51:12 by xiaxu             #+#    #+#             */
-/*   Updated: 2024/05/17 15:51:14 by xiaxu            ###   ########.fr       */
+/*   Updated: 2024/08/20 17:21:05 by xiaxu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	count_word(char const *s, char c)
-{
-	size_t	i;
-	int		count;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
-			count++;
-		i++;
-	}
-	return (count);
-}
 
 static void	split_into_words(char **result, char const *s, char c)
 {
